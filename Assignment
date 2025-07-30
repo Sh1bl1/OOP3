@@ -1,0 +1,43 @@
+// Q 1 
+Answer 
+b) To define a blueprint for a class
+
+// Q 2
+Answer 
+a) private
+b) protected
+c) internal
+
+
+// Q 3 
+Answer 
+b) No
+
+// Q 4
+Answer 
+b) Yes, interfaces can inherit from multiple interfaces
+
+// Q 5 
+Answer 
+d) implements
+
+// Q 6
+Answer 
+a) Yes
+
+// Q 7 
+Answer 
+b) No, all members are implicitly public
+
+// Q 8 
+Answer 
+a) To hide the interface members from outside access
+
+// Q 9 
+Answer 
+b) No, interfaces cannot have constructors
+
+//  Q 10 
+Answer 
+c) By separating interface names with commas
+
