@@ -133,3 +133,21 @@ internal class Plane : IMoveable , IFlyable
      Console. WriteLine( "Plane IFlyable Right");
    }
 }
+
+// Shallow Copy Vs Deep Copy
+int[] Arr01 = { 1, 2, 3 };
+int[] Arr02 = { 4, 5 , 6 };
+Console WriteLine( $"Arr01: (Arr01.GetHashCode}");
+Console. WriteLine( $"Arr02: {Arr02. GetHashCode)}*);
+Arr02 = Arr01; // Shallow Copy
+// Copy Identity
+// (1, 2, 3 ) -→> Has Two Reference Arr01, Arr02
+// (4, 5, 6) →> UnReachable Object
+Console. WriteLine();
+Console WriteLine( $" Arr01: (Arr01. GetHashCode}");
+Console. WriteLine( $"Arr02: {Arr02.GetHashCode()}*);
+// Identity (Address) + Object State [Data]
+
+Arr02 = (int[]) Arr01. Clone(); // //Deep Copy
+// clone Method will Copy The Object State Of The Caller
+// Assign The New Object To Arr02. Will Generete NEW Identity
