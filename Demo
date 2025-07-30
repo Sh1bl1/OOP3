@@ -1,0 +1,31 @@
+// Interface Ex1 
+internal interface IMyType
+{
+     // What Can Write Inside The Interface:
+     // 1. Signature Of Properties
+     // 2. Signature Of Methods [Name, Parameter, Return Type]
+    // 3. Default Implmented Methods [Fully Implemented Methods]
+    // 2. Signature Of Methods [Name, Parameter, Return Type]
+     void MyFunO);
+    // 1. Signature Of Properties
+      double Salary { set; get; }
+    // 3. Default Implmented Methods [Fully Implemented Methods]
+   void Print()
+      {
+      Console WriteLine(value: "Default Implmented Methods [Fully Implemented Methods]");
+      }
+}
+
+internal class Program
+{
+   static void Main()
+   {
+
+   // Interfaces : Reference Type
+   // Code Contract Between The Developer Who Write It And The Developer Who Use It (Implementation]
+   //МуТуре MуТуре = new IMyType() ;
+   // Note : We Can't Create Object From Any Interfaces
+    МуТуре MyТуре = new МуТуре:
+    My Type. MyFun();
+   } 
+}
