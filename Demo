@@ -29,3 +29,33 @@ internal class Program
     My Type. MyFun();
    } 
 }
+
+
+// Ex 2 
+internal class SeriesByTwo : ISeries
+{
+  public int Current ( get; set; } // 0
+
+  public void Next()
+  Current += 2;
+
+  public void Reset()
+  Current = 0;
+}
+
+internal interface ISeries
+  {
+    int Current {set ; get; }
+    void Next();
+    void Reset();
+  }
+static void Print10Number(SeriesByTwo series)
+  {
+   for(int i = 0; i < 10; i++)
+    {
+     Console Write($"(series.Current)");
+     series. Next();
+    }
+   Console. WriteLine;
+   series .Reset();
+}
