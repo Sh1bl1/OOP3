@@ -111,4 +111,75 @@ class Program
     }
 }
 
+// Q 2 
+
+public interface IAuthenticationService
+{
+    bool AuthenticateUser(string username, string password);
+    bool AuthorizeUser(string username, string role);
+}
+
+public class User
+{
+    public string Username { get; set;}
+    public string Password { get; set; }
+    public string Role { get; set; }
+
+    public User(string username, string password, string role)
+    {
+        Username = username;
+        Password = password;
+        Role = role;
+    }
+}
+
+public class BasicAuthenticationService : IAuthenticationService
+{
+    private  User [] users = new User[2]
+    {
+        new User("admin", "12345", "Administrator"),
+        new User("john", "password", "User")
+    };
+
+    public bool AuthenticateUser(string username, string password)
+    {
+        foreach (var user in users)
+        {
+            if (user.Username == username && user.Password == password)
+            {
+                Console.WriteLine($" {username} authenticated successfully.");
+                return true;
+            }
+        }
+        Console.WriteLine($" Authentication failed for {username}.");
+        return false;
+    }
+
+    public bool AuthorizeUser(string username, string role)
+    {
+        foreach (var user in users)
+        {
+            if (user.Username == username && user.Role == role)
+            {
+                Console.WriteLine($"{username} authorized as {role}.");
+                return true;
+            }
+        }
+        Console.WriteLine($"{username} is not authorized as {role}.");
+        return false;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        IAuthenticationService authService = new BasicAuthenticationService();
+
+            authService.AuthorizeUser("admin", "Administrator");
+            authService.AuthorizeUser("admin", "User"); 
+
+    }
+}
+
 
