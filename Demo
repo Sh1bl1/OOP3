@@ -59,3 +59,77 @@ static void Print10Number(SeriesByTwo series)
    Console. WriteLine;
    series .Reset();
 }
+
+// Ex 3 
+internal interface IMoveable
+ {
+   int Speed {get; set;}
+   void Forward();
+   void Backward();
+   void Left();
+   void Right ();
+ }
+internal class Car : IMoveable
+ {
+   public int Speed ( get; set; }
+   public void Backward()
+   {
+     Console. WriteLine(value: "Car IMoveable Backward");
+   }
+   public void Forward()
+   {
+     Console .WriteLine( "Car IMoveable Forward");
+   }
+   public void Left()
+   {
+     Console. WriteLine("Car IMoveable Left");
+   }
+   public void Right()
+   {
+     Console. WriteLine( "Car IMoveable Right");
+   }
+}
+internal interface IFlyable
+ {
+  int Speed {get; set; }
+  void Forward();
+  void Backward();
+  void Left();
+  void Right ();
+ }
+internal class Plane : IMoveable , IFlyable
+ {
+   public int Speed ( get; set; }
+   public void IMoveable.Backward()
+   {
+     Console. WriteLine("Plane IMoveable Backward");
+   }
+   public void IMoveable.Forward()
+   {
+     Console .WriteLine( "Plane IMoveable Forward");
+   }
+   public void IMoveable.Left()
+   {
+     Console. WriteLine("Plane IMoveable Left");
+   }
+   public void IMoveable.Right()
+   {
+     Console. WriteLine( "Plane IMoveable Right");
+   }
+ public void IFlyable.Backward()
+   {
+     Console. WriteLine("Plane IFlyable Backward");
+   }
+   public void IFlyable.Forward()
+   {
+     Console .WriteLine( "Plane IFlyable Forward");
+   }
+   public void IFlyable.Left()
+   {
+     Console. WriteLine("Plane IFlyable Left");
+   }
+   public void IFlyable.Right()
+   {
+     Console. WriteLine( "Plane IFlyable Right");
+   }
+}
