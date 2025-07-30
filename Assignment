@@ -182,4 +182,48 @@ class Program
     }
 }
 
+// Q 3 Part 2 
+
+internal interface INotificationService
+{
+    void SendNotification(string reciever, string message);
+}
+
+public class EmailNotificationService : INotificationService
+{
+    public void SendNotification(string reciever, string message)
+    {
+        Console.WriteLine($" Sending email to {reciever}: {message}");
+    }
+}
+
+public class SmsNotificationService : INotificationService
+{
+    public void SendNotification(string reciever, string message)
+    {
+        Console.WriteLine($" Sending SMS to {reciever}: {message}");
+    }
+}
+
+public class PushNotificationService : INotificationService
+{
+    public void SendNotification(string reciever, string message)
+    {
+        Console.WriteLine($" Sending push notification to {reciever}: {message}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        INotificationService emailService = new EmailNotificationService();
+        INotificationService smsService = new SmsNotificationService();
+        INotificationService pushService = new PushNotificationService();
+
+        emailService.SendNotification("abdulrahman@gmail.com", "Your orderis on the way.");
+        smsService.SendNotification("0102929507", "Your OTP code is 1234.");
+        pushService.SendNotification("User123", " You have a new message ");
+    }
+}
 
