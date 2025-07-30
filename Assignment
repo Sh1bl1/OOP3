@@ -41,3 +41,74 @@ b) No, interfaces cannot have constructors
 Answer 
 c) By separating interface names with commas
 
+---------------------------- Part 2 -----------------------------
+
+// Q 1
+public interface IShape
+{
+    double Area { get; set;}
+    void DisplayShapeInfo();
+}
+
+public interface ICircle : IShape
+{
+    double Radius { get; set;}
+}
+
+public interface IRectangle : IShape
+{
+    double Width { get; set;}
+    double Height { get; set;}
+}
+
+public class Circle : ICircle
+{
+    public double Radius { get; set; }
+    public double Area = Math.PI * Radius * Radius;
+
+    public Circle(double radius)
+    {
+        Radius = radius;
+    }
+
+    public void DisplayShapeInfo()
+    {
+        Console.WriteLine($"Shape: Circle");
+        Console.WriteLine($"Radius: {Radius}");
+        Console.WriteLine($"Area: {Area}");
+    }
+}
+
+public class Rectangle : IRectangle
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+    public double Area = Width * Height;
+
+    public Rectangle(double width, double height)
+    {
+        Width = width;
+        Height = height;
+    }
+
+    public void DisplayShapeInfo()
+    {
+        Console.WriteLine($"Shape: Rectangle");
+        Console.WriteLine($"Width: {Width}, Height: {Height}");
+        Console.WriteLine($"Area: {Area}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        ICircle circle = new Circle(5);
+        IRectangle rectangle = new Rectangle(4, 7);
+
+        circle.DisplayShapeInfo();
+        rectangle.DisplayShapeInfo();
+    }
+}
+
+
